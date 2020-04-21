@@ -1,0 +1,32 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA_pro/18.1
+vSPI_Master_MaquinaEstats_MLF
+!s110 1587461152
+!i10b 1
+!s100 5<bl]99HdZ;bI_hkDO7N73
+Id:6_a^`ina0D4Ec725O0K2
+VDg1SIo80bB@j0V0VzS_@n1
+dC:/Users/mique/Desktop/DSSD/Practiques2020/SPI/Lorenzo_SPI/sim
+w1587460769
+8C:/Users/mique/Desktop/DSSD/Practiques2020/SPI/Lorenzo_SPI/rtl/SPI_Master_MaquinaEstats_MLF.v
+FC:/Users/mique/Desktop/DSSD/Practiques2020/SPI/Lorenzo_SPI/rtl/SPI_Master_MaquinaEstats_MLF.v
+L0 4
+OV;L;10.6d;65
+r1
+!s85 0
+31
+!s108 1587461152.000000
+!s107 C:/Users/mique/Desktop/DSSD/Practiques2020/SPI/Lorenzo_SPI/rtl/SPI_Master_MaquinaEstats_MLF.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/mique/Desktop/DSSD/Practiques2020/SPI/Lorenzo_SPI/rtl/SPI_Master_MaquinaEstats_MLF.v|
+!i113 1
+o-work work
+tCvgOpt 0
+n@s@p@i_@master_@maquina@estats_@m@l@f
