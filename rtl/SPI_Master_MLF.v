@@ -16,7 +16,7 @@ module SPI_Master
 
         //Senyals de RX (MISO)
         output reg              o_RX_DV,                                //Pols d'un bit que fa de trigger per enviar les dades per o_RX_Byte un cop siguin valides (r_RX_bit_count = 3'b000)
-        output reg              o_RX_Byte,                              //Dada convertida en paralel a partir de les dades en serie que arriben per MISO, indexat per r_RX_bit_Count
+        output reg [7:0]        o_RX_Byte,                              //Dada convertida en paralel a partir de les dades en serie que arriben per MISO, indexat per r_RX_bit_Count
 
         //Senyals a TOP
         output reg              o_SPI_clk,                              //clock del nostre sistema SPI, es genera a partir de i_clk i s'ompla per r_SPI_clk
@@ -79,7 +79,7 @@ begin
                 begin
                     r_SPI_Clk_Edges <= r_SPI_Clk_Edges - 1;
                     r_Leading_Edge <= 1'b1;
-                    r_SPI_clk_count <= 0;
+                    r_SPI_clk_count <= r_SPI_clk_count + 1;
                     r_SPI_clk <= ~r_SPI_clk;
                 end
                 else

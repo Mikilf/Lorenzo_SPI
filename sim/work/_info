@@ -8,25 +8,69 @@ z2
 !i10f 100
 cModel Technology
 dC:/intelFPGA_pro/18.1
-vSPI_Master_MaquinaEstats_MLF
-!s110 1587461152
+vSPI_Master
+Z0 !s110 1588669570
 !i10b 1
-!s100 5<bl]99HdZ;bI_hkDO7N73
-Id:6_a^`ina0D4Ec725O0K2
-VDg1SIo80bB@j0V0VzS_@n1
-dC:/Users/mique/Desktop/DSSD/Practiques2020/SPI/Lorenzo_SPI/sim
-w1587460769
-8C:/Users/mique/Desktop/DSSD/Practiques2020/SPI/Lorenzo_SPI/rtl/SPI_Master_MaquinaEstats_MLF.v
-FC:/Users/mique/Desktop/DSSD/Practiques2020/SPI/Lorenzo_SPI/rtl/SPI_Master_MaquinaEstats_MLF.v
+!s100 17>TC][92zRfn=[S6<CgZ0
+IFElSTaZQzcANC`9EYE7]B1
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/mique/Desktop/DSSD/Practiques2020/SPI/Lorenzo_SPI/sim
+w1588612627
+8C:/Users/mique/Desktop/DSSD/Practiques2020/SPI/Lorenzo_SPI/rtl/SPI_Master_MLF.v
+FC:/Users/mique/Desktop/DSSD/Practiques2020/SPI/Lorenzo_SPI/rtl/SPI_Master_MLF.v
 L0 4
-OV;L;10.6d;65
+Z3 OV;L;10.6d;65
 r1
 !s85 0
 31
-!s108 1587461152.000000
+Z4 !s108 1588669570.000000
+!s107 C:/Users/mique/Desktop/DSSD/Practiques2020/SPI/Lorenzo_SPI/rtl/SPI_Master_MLF.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/mique/Desktop/DSSD/Practiques2020/SPI/Lorenzo_SPI/rtl/SPI_Master_MLF.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+n@s@p@i_@master
+vSPI_Master_MaquinaEstats_MLF
+!s110 1588669569
+!i10b 1
+!s100 5<bl]99HdZ;bI_hkDO7N73
+Id:6_a^`ina0D4Ec725O0K2
+R1
+R2
+w1588609208
+8C:/Users/mique/Desktop/DSSD/Practiques2020/SPI/Lorenzo_SPI/rtl/SPI_Master_MaquinaEstats_MLF.v
+FC:/Users/mique/Desktop/DSSD/Practiques2020/SPI/Lorenzo_SPI/rtl/SPI_Master_MaquinaEstats_MLF.v
+L0 4
+R3
+r1
+!s85 0
+31
+!s108 1588669569.000000
 !s107 C:/Users/mique/Desktop/DSSD/Practiques2020/SPI/Lorenzo_SPI/rtl/SPI_Master_MaquinaEstats_MLF.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/mique/Desktop/DSSD/Practiques2020/SPI/Lorenzo_SPI/rtl/SPI_Master_MaquinaEstats_MLF.v|
 !i113 1
-o-work work
-tCvgOpt 0
+R5
+R6
 n@s@p@i_@master_@maquina@estats_@m@l@f
+vSPI_Master_MLF_TB
+R0
+!i10b 1
+!s100 3dgWbNj_jR3^Kd?7=j>o:3
+IlGd<1>CMQM53?nC[kbj^81
+R1
+R2
+w1588669557
+8C:/Users/mique/Desktop/DSSD/Practiques2020/SPI/Lorenzo_SPI/tb/SPI_Master_MLF_TB.v
+FC:/Users/mique/Desktop/DSSD/Practiques2020/SPI/Lorenzo_SPI/tb/SPI_Master_MLF_TB.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/mique/Desktop/DSSD/Practiques2020/SPI/Lorenzo_SPI/tb/SPI_Master_MLF_TB.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/mique/Desktop/DSSD/Practiques2020/SPI/Lorenzo_SPI/tb/SPI_Master_MLF_TB.v|
+!i113 1
+R5
+R6
+n@s@p@i_@master_@m@l@f_@t@b

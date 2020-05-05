@@ -14,7 +14,7 @@ module SPI_Master_MaquinaEstats_MLF
      input [$clog2(MAX_BYTES_PER_CS+1)-1:0]         i_TX_count,         //Variable que ens indicarà el numero de bytes que s'envien per TX
      input [7:0]                                    i_TX_byte,
      input                                          i_TX_DV,
-     output o_TX_Ready,
+     output                                         o_TX_Ready,
 //Senyals de RX (MISO)
      output reg [$clog2(MAX_BYTES_PER_CS+1)-1:0]    o_RX_count,         //Varialbe que ens idexiona les entrades de MISO en l'ordre correcte
      output                                         o_RX_DV,
