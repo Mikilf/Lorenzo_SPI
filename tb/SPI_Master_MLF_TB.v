@@ -40,7 +40,7 @@ module SPI_Master_MLF_TB();
         .o_SPI_MOSI(w_SPI_MOSI)
         );
 
-    task SendSingleByte(input [7:0] data); begin
+    task EnviaUnByte(input [7:0] data); begin
         @(posedge r_clk);
         r_master_TX_byte <= data;
         r_master_TX_DV <= 1'b1;
@@ -51,19 +51,23 @@ module SPI_Master_MLF_TB();
 
     initial
      begin
+        // Required for EDA Playground
+        $dumpfile("dump.vcd"); 
+        $dumpvars;
+      
         repeat(10) @(posedge r_clk);
         r_rst_n = 1'b0;
         repeat(10) @(posedge r_clk);
         r_rst_n = 1'b1;
 
         //test un byte
-        SendSingleByte(8'hC1);
+        EnviaUnByte(8'hC1);
         $display("He enviat 0xC1, rebo 0x%X", w_master_RX_byte);
 
         //test dos bytes
-        SendSingleByte(8'hBE);
+        EnviaUnByte(8'hBE);
         $display("He enviat 0xBE, rebo 0x%X", w_master_RX_byte);
-        SendSingleByte(8'hEF);
+        EnviaUnByte(8'hEF);
         $display("He enviat 0xEF, rebo 0x%X", w_master_RX_byte);
         repeat(10) @(posedge r_clk);
         $finish();

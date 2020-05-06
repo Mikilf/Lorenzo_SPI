@@ -1,9 +1,9 @@
 //model original: https://github.com/nandland/spi-master/tree/master/Verilog
 // el model que es presenta a continuació és una modificació del model original amb els requeriments establerts pels professors
 
-module SPI_Master
-    #(parameter SPI_MODE = 0,                                           //Determina quin model SPI utilitzem CPOL,CPHA: 0=00, 1=01, 2=10, 3=11
-    parameter CLKS_PER_HALF_BIT = 3)                                    //Donada la freq de l'entrada (i_clk) determinem quants pulsos hi ha en mig bit (SPI_clk = 25MHz, i_clk= 100MHz; 100MHz/25MHz = 4 polsos / 2 = 2)
+module SPI_Master_MLF
+    #(parameter SPI_MODE = 3,                                           //Determina quin model SPI utilitzem CPOL,CPHA: 0=00, 1=01, 2=10, 3=11
+      parameter CLKS_PER_HALF_BIT = 4)                                    //Donada la freq de l'entrada (i_clk) determinem quants pulsos hi ha en mig bit (SPI_clk = 25MHz, i_clk= 100MHz; 100MHz/25MHz = 4 polsos / 2 = 2)
     (
         //Senyals de control
         input                   i_rst_n,                                //senyal de reset negada
@@ -107,7 +107,7 @@ begin
         r_TX_DV <= i_TX_DV;                                             //delay d'un clock
         if(i_TX_DV)
         begin
-            r_TX_DV <= i_TX_DV;                                         //utilitzem la dada que ens arriba des del TOP i la registrem localment
+            r_TX_Byte <= i_TX_Byte;                                         //utilitzem la dada que ens arriba des del TOP i la registrem localment
         end
     end
 end

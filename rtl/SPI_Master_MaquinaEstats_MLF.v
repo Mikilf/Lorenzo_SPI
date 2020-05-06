@@ -12,13 +12,13 @@ module SPI_Master_MaquinaEstats_MLF
      input                                          i_clk,
 //Senyals de TX (MOSI)
      input [$clog2(MAX_BYTES_PER_CS+1)-1:0]         i_TX_count,         //Variable que ens indicarà el numero de bytes que s'envien per TX
-     input [7:0]                                    i_TX_byte,
+     input [7:0]                                    i_TX_Byte,
      input                                          i_TX_DV,
      output                                         o_TX_Ready,
 //Senyals de RX (MISO)
      output reg [$clog2(MAX_BYTES_PER_CS+1)-1:0]    o_RX_count,         //Varialbe que ens idexiona les entrades de MISO en l'ordre correcte
      output                                         o_RX_DV,
-     output [7:0] o_RX_byte,
+     output [7:0]                                   o_RX_Byte,
 //Senyals a top
      output                                         o_SPI_clk,
      input                                          i_SPI_MISO,
@@ -36,21 +36,22 @@ module SPI_Master_MaquinaEstats_MLF
  reg [$clog2(MAX_BYTES_PER_CS+1)-1:0]   r_TX_count;                     //Utilitzarem aquest registre per contar les dades que enviem per MOSI
  wire                                   w_Master_Ready;                 //Utilitzarem aquest wire per indicar quan el master està preparat per rebre una nova dada
 
- assign o_SPI_CS_n = r_CS_n;
- assign o_TX_Ready = ((r_MaquinaEstats == IDLE) | (r_MaquinaEstats == TRANSFER && w_Master_Ready == 1'b1 && r_TX_count > 0)) & ~i_TX_DV;
-
  SPI_Master_MLF                                                         //Cridem el Master del SPI 
   #(.SPI_MODE(SPI_MODE),
     .CLKS_PER_HALF_BIT(CLKS_PER_HALF_BIT)
     ) SPI_Master_Inst
 (
+    //Senyals de control
     .i_rst_n(i_rst_n),
+    .i_clk(i_clk),
+    //Senyals de TX(MOSI)
+    .i_TX_Byte(i_TX_Byte),
     .i_TX_DV(i_TX_DV),
     .o_TX_Ready(w_Master_Ready),
-
+    //Senyals de RX(MISO)
     .o_RX_DV(o_RX_DV),
-    .o_RX_byte(o_RX_byte),
-
+    .o_RX_Byte(o_RX_Byte),
+    //Interficie SPI
     .o_SPI_clk(o_SPI_clk),
     .i_SPI_MISO(i_SPI_MISO),
     .o_SPI_MOSI(o_SPI_MOSI)
@@ -134,5 +135,9 @@ begin
         end
     end
 end
+
+ assign o_SPI_CS_n = r_CS_n;
+ assign o_TX_Ready = ((r_MaquinaEstats == IDLE) | (r_MaquinaEstats == TRANSFER && w_Master_Ready == 1'b1 && r_TX_count > 0)) & ~i_TX_DV;
+
 
 endmodule
