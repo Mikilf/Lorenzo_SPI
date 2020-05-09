@@ -21,7 +21,7 @@ module SPI_Master_MLF_TB();
     always #(MAIN_CLK_DELAY) r_clk = ~r_clk;
 
     //Instantiate UUT
-    SPI_Master
+    SPI_Master_MLF
     #(.SPI_MODE(SPI_MODE),
       .CLKS_PER_HALF_BIT(CLKS_PER_HALF_BIT)) SPI_Master_MLF_UUT
     (

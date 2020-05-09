@@ -76,10 +76,10 @@ module SPI_MASTER_MLF_CS_TB();
             repeat(10) @(posedge r_clk);
             r_rst_n = 1'b1;
             //envem dos bytes
-            EnviaUnByte(8'h66);
-            $display("He enviat el byte 0x66, Rebut 0x%X", w_Master_RX_Byte);
-            EnviaUnByte(8'hC2);
-            $desplay("He envial el byte 0xC2, Rebut 0x%X", w_Master_RX_Byte);
+            EnviaUnByte(8'hFF);
+            $display("He enviat el byte 0xFF, Rebut 0x%X", w_Master_RX_Byte);
+            EnviaUnByte(8'h88);
+            $display("He envial el byte 0x88, Rebut 0x%X", w_Master_RX_Byte);
 
             repeat(100) @(posedge r_clk);
             $stop();       
