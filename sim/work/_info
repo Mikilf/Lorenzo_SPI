@@ -31,13 +31,13 @@ Z7 o-work work
 Z8 tCvgOpt 0
 n@s@p@i_@master
 vSPI_Master_MaquinaEstats_MLF
-Z9 !s110 1589044789
+Z9 !s110 1589396464
 !i10b 1
-!s100 [HlA`::2Z6XS`Z]Ka3nTK2
-IEWe]iHezW3X<GV5hih7zm0
+!s100 `JTA[cPe7X0FHzLDSLM>o0
+IEC4TO3Pl=RbWn3haHRKdi0
 R0
 R1
-w1588794270
+Z10 w1589396428
 8C:/Users/mique/Desktop/DSSD/Practiques2020/SPI/Lorenzo_SPI/rtl/SPI_Master_MaquinaEstats_MLF.v
 FC:/Users/mique/Desktop/DSSD/Practiques2020/SPI/Lorenzo_SPI/rtl/SPI_Master_MaquinaEstats_MLF.v
 L0 4
@@ -45,7 +45,7 @@ R4
 r1
 !s85 0
 31
-Z10 !s108 1589044789.000000
+Z11 !s108 1589396464.000000
 !s107 C:/Users/mique/Desktop/DSSD/Practiques2020/SPI/Lorenzo_SPI/rtl/SPI_Master_MaquinaEstats_MLF.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/mique/Desktop/DSSD/Practiques2020/SPI/Lorenzo_SPI/rtl/SPI_Master_MaquinaEstats_MLF.v|
 !i113 1
@@ -55,11 +55,11 @@ n@s@p@i_@master_@maquina@estats_@m@l@f
 vSPI_Master_MLF
 R9
 !i10b 1
-!s100 dG=J?72[B2[lVQDG4FQHZ1
-IcN`7O0nFPFGP0KoV?WcMN2
+!s100 Q^RhdP^QT5`DJ?<3V]i0i2
+I]ZjGRNj;b[O27OXOcK0Fb2
 R0
 R1
-w1589032836
+R10
 R2
 R3
 L0 4
@@ -67,7 +67,7 @@ R4
 r1
 !s85 0
 31
-R10
+R11
 R5
 R6
 !i113 1
@@ -75,13 +75,13 @@ R7
 R8
 n@s@p@i_@master_@m@l@f
 vSPI_MASTER_MLF_CS_TB
-!s110 1589044790
+Z12 !s110 1589396465
 !i10b 1
-!s100 ljVjf>5MZ>I5`Ce1i<lS82
-Im>CQYBo=m2`2Y`R7d1Z[P2
+!s100 ;[0]hAN_UKR<6Pl`Tz38F2
+I1agO_Y<7e[:e<5TnRI2R@2
 R0
 R1
-w1589044757
+w1589396050
 8C:/Users/mique/Desktop/DSSD/Practiques2020/SPI/Lorenzo_SPI/tb/SPI_Master_MLF_CS_TB.v
 FC:/Users/mique/Desktop/DSSD/Practiques2020/SPI/Lorenzo_SPI/tb/SPI_Master_MLF_CS_TB.v
 L0 3
@@ -89,7 +89,7 @@ R4
 r1
 !s85 0
 31
-!s108 1589044790.000000
+Z13 !s108 1589396465.000000
 !s107 C:/Users/mique/Desktop/DSSD/Practiques2020/SPI/Lorenzo_SPI/tb/SPI_Master_MLF_CS_TB.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/mique/Desktop/DSSD/Practiques2020/SPI/Lorenzo_SPI/tb/SPI_Master_MLF_CS_TB.v|
 !i113 1
@@ -97,13 +97,13 @@ R7
 R8
 n@s@p@i_@m@a@s@t@e@r_@m@l@f_@c@s_@t@b
 vSPI_Master_MLF_TB
-R9
+R12
 !i10b 1
-!s100 RdI=haPL0b^924HzMJC@_3
-Im1hb?i9ohY2^a9:jlYM:61
+!s100 9fzQ3<chK^MAR8`NCEY;c1
+IJ=:]oM@6UDFocbkc_i[PD0
 R0
 R1
-w1589032934
+w1589392025
 8C:/Users/mique/Desktop/DSSD/Practiques2020/SPI/Lorenzo_SPI/tb/SPI_Master_MLF_TB.v
 FC:/Users/mique/Desktop/DSSD/Practiques2020/SPI/Lorenzo_SPI/tb/SPI_Master_MLF_TB.v
 L0 1
@@ -111,7 +111,7 @@ R4
 r1
 !s85 0
 31
-R10
+R13
 !s107 C:/Users/mique/Desktop/DSSD/Practiques2020/SPI/Lorenzo_SPI/tb/SPI_Master_MLF_TB.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/mique/Desktop/DSSD/Practiques2020/SPI/Lorenzo_SPI/tb/SPI_Master_MLF_TB.v|
 !i113 1

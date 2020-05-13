@@ -5,25 +5,4 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 2
 Top level modules:
 	SPI_Master_MLF_TB
 
-} {} {}} C:/Users/mique/Desktop/DSSD/Practiques2020/SPI/Lorenzo_SPI/tb/SPI_Master_MLF_CS_TB.v {1 {vlog -work work -stats=none C:/Users/mique/Desktop/DSSD/Practiques2020/SPI/Lorenzo_SPI/tb/SPI_Master_MLF_CS_TB.v
-Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
--- Compiling module SPI_MASTER_MLF_CS_TB
-
-Top level modules:
-	SPI_MASTER_MLF_CS_TB
-
-} {} {}} C:/Users/mique/Desktop/DSSD/Practiques2020/SPI/Lorenzo_SPI/rtl/SPI_Master_MaquinaEstats_MLF.v {1 {vlog -work work -stats=none C:/Users/mique/Desktop/DSSD/Practiques2020/SPI/Lorenzo_SPI/rtl/SPI_Master_MaquinaEstats_MLF.v
-Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
--- Compiling module SPI_Master_MaquinaEstats_MLF
-
-Top level modules:
-	SPI_Master_MaquinaEstats_MLF
-
-} {} {}} C:/Users/mique/Desktop/DSSD/Practiques2020/SPI/Lorenzo_SPI/rtl/SPI_Master_MLF.v {1 {vlog -work work -stats=none C:/Users/mique/Desktop/DSSD/Practiques2020/SPI/Lorenzo_SPI/rtl/SPI_Master_MLF.v
-Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
--- Compiling module SPI_Master_MLF
-
-Top level modules:
-	SPI_Master_MLF
-
 } {} {}}

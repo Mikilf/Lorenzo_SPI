@@ -14,6 +14,7 @@ module SPI_MASTER_MLF_CS_TB();
     wire            w_SPI_clk;
     wire            w_SPI_CS_n;
     wire            w_SPI_MOSI;
+    //wire            w_SPI_MISO;
 
     //Senyals especifiques del master
 
@@ -22,8 +23,8 @@ module SPI_MASTER_MLF_CS_TB();
     wire                                    w_Master_TX_ready;
     wire                                    w_Master_RX_DV;
     wire[7:0]                               w_Master_RX_Byte;
-    wire [$clog2(MAX_BYTES_PER_CS+1)-1:0]   w_Master_RX_count = 2'b10;
-    wire [$clog2(MAX_BYTES_PER_CS+1)-1:0]   r_Master_TX_count = 2'b10;
+    wire [2:0]                              w_Master_RX_count = 2'b10;
+    wire [2:0]                              r_Master_TX_count = 2'b10;
 
     always #(MAIN_CLK_DELAY) r_clk = ~r_clk;
 

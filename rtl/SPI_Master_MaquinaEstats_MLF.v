@@ -11,12 +11,12 @@ module SPI_Master_MaquinaEstats_MLF
      input                                          i_rst_n,
      input                                          i_clk,
 //Senyals de TX (MOSI)
-     input [$clog2(MAX_BYTES_PER_CS+1)-1:0]         i_TX_count,         //Variable que ens indicarà el numero de bytes que s'envien per TX
+     input [2:0]                                    i_TX_count,         //Variable que ens indicarà el numero de bytes que s'envien per TX
      input [7:0]                                    i_TX_Byte,
      input                                          i_TX_DV,
      output                                         o_TX_Ready,
 //Senyals de RX (MISO)
-     output reg [$clog2(MAX_BYTES_PER_CS+1)-1:0]    o_RX_count,         //Varialbe que ens idexiona les entrades de MISO en l'ordre correcte
+     output reg [2:0]                               o_RX_count,         //Varialbe que ens idexiona les entrades de MISO en l'ordre correcte
      output                                         o_RX_DV,
      output [7:0]                                   o_RX_Byte,
 //Senyals a top
@@ -32,8 +32,8 @@ module SPI_Master_MaquinaEstats_MLF
  
  reg[1:0]                               r_MaquinaEstats;                //En aquest registre guardarem l'estat en el qual ens trobem dins de la maquina d'estats
  reg                                    r_CS_n;                         //En aquest registre guardarem de forma local el vaor del CS
- reg [$clog2(CS_INACTIVE)-1:0]          r_CS_Inactive_Count;            //Utilitzarem aquest registre per determinar els cicles que ens hem de mantindre amb CS inactius
- reg [$clog2(MAX_BYTES_PER_CS+1)-1:0]   r_TX_count;                     //Utilitzarem aquest registre per contar les dades que enviem per MOSI
+ reg [1:0]                              r_CS_Inactive_Count;            //Utilitzarem aquest registre per determinar els cicles que ens hem de mantindre amb CS inactius
+ reg [2:0]                              r_TX_count;                     //Utilitzarem aquest registre per contar les dades que enviem per MOSI
  wire                                   w_Master_Ready;                 //Utilitzarem aquest wire per indicar quan el master està preparat per rebre una nova dada
 
  SPI_Master_MLF                                                         //Cridem el Master del SPI 
@@ -66,7 +66,7 @@ begin
         r_MaquinaEstats <= IDLE;                                        //Ens possisionem al estat incial IDLE
         r_CS_n <= 1'b1;                                                 //Desactivem el chip select
         r_TX_count <= 0;                                                //Reiniciem la compta de TX
-        r_CS_Inactive_Count <= CS_INACTIVE_CLKS;                        //Donem el valor que haguem determinat al temps que haurem d'estar inacius
+        r_CS_Inactive_Count <= 2'b01;                        //Donem el valor que haguem determinat al temps que haurem d'estar inacius
     end
     else
     begin
@@ -75,7 +75,7 @@ begin
             begin
                if(r_CS_n & i_TX_DV)                                     //Quan s'activa TX DV vol dir que alguna cosa arriba
                begin
-                  r_TX_count <= i_TX_count -1;                          //Comencem a contar enrere
+                  r_TX_count <= i_TX_count -3'b001;                          //Comencem a contar enrere
                   r_CS_n <= 1'b0;                                       //Activem el Chip Select
                   r_MaquinaEstats <= TRANSFER;                          //Pasem al estat de transfer perque ja estem preparats per enviar
                end 
@@ -88,13 +88,13 @@ begin
                     begin
                         if(i_TX_DV)                                     //I el trigger esta activat
                         begin
-                        r_TX_count <= r_TX_count - 1;                   //Descontem un a la conta per passar a la seguent posicio
+                        r_TX_count <= r_TX_count - 3'b001;                   //Descontem un a la conta per passar a la seguent posicio
                         end
                     end
                     else
                     begin
                         r_CS_n <= 1'b1;                                 //Un cop TX count sigui 0, tornem a activar el CS
-                        r_CS_Inactive_Count <= CS_INACTIVE_CLKS;        //Donem el valor maxim al temps que hem d'estar inactius
+                        r_CS_Inactive_Count <= 2'b01;        //Donem el valor maxim al temps que hem d'estar inactius
                         r_MaquinaEstats <= CS_INACTIVE;                 //Pasem al estat d'inactivitat
                     end
                 end 

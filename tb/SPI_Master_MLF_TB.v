@@ -63,12 +63,14 @@ module SPI_Master_MLF_TB();
         //test un byte
         EnviaUnByte(8'hC1);
         $display("He enviat 0xC1, rebo 0x%X", w_master_RX_byte);
-
+        #50
         //test dos bytes
         EnviaUnByte(8'hBE);
         $display("He enviat 0xBE, rebo 0x%X", w_master_RX_byte);
+        #50
         EnviaUnByte(8'hEF);
         $display("He enviat 0xEF, rebo 0x%X", w_master_RX_byte);
+        #50
         repeat(10) @(posedge r_clk);
         $finish();
      end
