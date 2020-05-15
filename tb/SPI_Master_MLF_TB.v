@@ -1,7 +1,10 @@
+//Model original: https:github.com/nandland/spi-master/blob/master/Verilog/sim/SPI_Master_TB.sv
+//el model que es presenta a continuació és una modificació del model original amb els requeriments establerts pels professors
+
 module SPI_Master_MLF_TB();
 
-    parameter SPI_MODE = 3;
-    parameter CLKS_PER_HALF_BIT = 4;
+    parameter SPI_MODE = 0;
+    parameter CLKS_PER_HALF_BIT = 2;
     parameter MAIN_CLK_DELAY = 2;
 
     reg r_rst_n = 1'b0;
@@ -61,18 +64,18 @@ module SPI_Master_MLF_TB();
         r_rst_n = 1'b1;
 
         //test un byte
-        EnviaUnByte(8'hC1);
-        $display("He enviat 0xC1, rebo 0x%X", w_master_RX_byte);
+        EnviaUnByte(8'h9A);
+        $display("He enviat 0x9A, rebo 0x%X", w_master_RX_byte);
         #50
         //test dos bytes
-        EnviaUnByte(8'hBE);
-        $display("He enviat 0xBE, rebo 0x%X", w_master_RX_byte);
+        EnviaUnByte(8'h99);
+        $display("He enviat 0x99, rebo 0x%X", w_master_RX_byte);
         #50
-        EnviaUnByte(8'hEF);
-        $display("He enviat 0xEF, rebo 0x%X", w_master_RX_byte);
+        EnviaUnByte(8'h77);
+        $display("He enviat 0x77, rebo 0x%X", w_master_RX_byte);
         #50
         repeat(10) @(posedge r_clk);
-        $finish();
+        $stop();
      end
 
 endmodule

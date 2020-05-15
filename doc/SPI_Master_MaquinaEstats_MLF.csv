@@ -1,0 +1,52 @@
+# Copyright (C) 1991-2013 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+
+# Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+# File: C:\Users\mique\Desktop\DSSD\Practiques2020\SPI\Lorenzo_SPI\syn\SPI_Master_MaquinaEstats_MLF.csv
+# Generated on: Thu May 14 19:50:46 2020
+
+# Note: The column header names should not be changed if you wish to import this .csv file into the Quartus II software.
+
+To,Direction,Location,I/O Bank,VREF Group,Fitter Location,I/O Standard,Reserved,Current Strength,Slew Rate,Differential Pair
+i_SPI_MISO,Input,,,,PIN_K2,,,,,
+i_TX_Byte[7],Input,,,,PIN_J6,,,,,
+i_TX_Byte[6],Input,,,,PIN_L4,,,,,
+i_TX_Byte[5],Input,,,,PIN_K7,,,,,
+i_TX_Byte[4],Input,,,,PIN_L3,,,,,
+i_TX_Byte[3],Input,,,,PIN_J7,,,,,
+i_TX_Byte[2],Input,,,,PIN_M4,,,,,
+i_TX_Byte[1],Input,,,,PIN_J5,,,,,
+i_TX_Byte[0],Input,,,,PIN_K8,,,,,
+i_TX_DV,Input,,,,PIN_K3,,,,,
+i_TX_count[2],Input,,,,PIN_N3,,,,,
+i_TX_count[1],Input,,,,PIN_M5,,,,,
+i_TX_count[0],Input,,,,PIN_N4,,,,,
+i_clk,Input,,,,PIN_J1,,,,,
+i_rst_n,Input,,,,PIN_Y2,,,,,
+o_RX_Byte[7],Output,,,,PIN_L7,,,,,
+o_RX_Byte[6],Output,,,,PIN_G1,,,,,
+o_RX_Byte[5],Output,,,,PIN_H5,,,,,
+o_RX_Byte[4],Output,,,,PIN_L5,,,,,
+o_RX_Byte[3],Output,,,,PIN_J3,,,,,
+o_RX_Byte[2],Output,,,,PIN_M3,,,,,
+o_RX_Byte[1],Output,,,,PIN_F2,,,,,
+o_RX_Byte[0],Output,,,,PIN_J4,,,,,
+o_RX_DV,Output,,,,PIN_G2,,,,,
+o_RX_count[2],Output,,,,PIN_F1,,,,,
+o_RX_count[1],Output,,,,PIN_K1,,,,,
+o_RX_count[0],Output,,,,PIN_E1,,,,,
+o_SPI_CS_n,Output,,,,PIN_K4,,,,,
+o_SPI_MOSI,Output,,,,PIN_L8,,,,,
+o_SPI_clk,Output,,,,PIN_L6,,,,,
+o_TX_Ready,Output,,,,PIN_M7,,,,,

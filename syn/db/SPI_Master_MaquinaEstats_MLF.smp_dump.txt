@@ -1,0 +1,6 @@
+
+State Machine - |SPI_Master_MaquinaEstats_MLF|r_MaquinaEstats
+Name r_MaquinaEstats.IDLE r_MaquinaEstats.CS_INACTIVE r_MaquinaEstats.TRANSFER 
+r_MaquinaEstats.IDLE 0 0 0 
+r_MaquinaEstats.TRANSFER 1 0 1 
+r_MaquinaEstats.CS_INACTIVE 1 1 0 

@@ -1,11 +1,11 @@
-//model original: https://github.com/nandland/spi-master/tree/master/Verilog
+// Model original: https://github.com/nandland/spi-master/tree/master/Verilog/source/SPI_Master_With_Single_CS.v
 // el model que es presenta a continuació és una modificació del model original amb els requeriments establerts pels professors
 
 module SPI_Master_MaquinaEstats_MLF
  #(parameter SPI_MODE = 0,                                              //Determina quin model SPI utilitzem CPOL,CPHA: 0=00, 1=01, 2=10, 3=11
  parameter CLKS_PER_HALF_BIT = 2,                                       //Donada la freq de l'entrada (i_clk) determinem quants pulsos hi ha en mig bit (SPI_clk = 25MHz, i_clk= 100MHz; 100MHz/25MHz = 4 polsos / 2 = 2)
  parameter MAX_BYTES_PER_CS = 2,                                        //Numero de bytes que enviarem cada cop que s'activi el chip select
- parameter CS_INACTIVE_CLKS = 1)                                        //Determina el numero de cicles que ens mantindrem inactius un cop acabada la transmissio (necessari per alguns moduls)
+ parameter CS_INACTIVE_CLKS = 3)                                        //Determina el numero de cicles que ens mantindrem inactius un cop acabada la transmissio (necessari per alguns moduls)
  (
 //Senyals de control
      input                                          i_rst_n,
@@ -66,7 +66,7 @@ begin
         r_MaquinaEstats <= IDLE;                                        //Ens possisionem al estat incial IDLE
         r_CS_n <= 1'b1;                                                 //Desactivem el chip select
         r_TX_count <= 0;                                                //Reiniciem la compta de TX
-        r_CS_Inactive_Count <= 2'b01;                        //Donem el valor que haguem determinat al temps que haurem d'estar inacius
+        r_CS_Inactive_Count <= 2'b11;                                   //Donem el valor que haguem determinat al temps que haurem d'estar inacius
     end
     else
     begin
@@ -75,7 +75,7 @@ begin
             begin
                if(r_CS_n & i_TX_DV)                                     //Quan s'activa TX DV vol dir que alguna cosa arriba
                begin
-                  r_TX_count <= i_TX_count -3'b001;                          //Comencem a contar enrere
+                  r_TX_count <= i_TX_count -3'b001;                     //Comencem a contar enrere
                   r_CS_n <= 1'b0;                                       //Activem el Chip Select
                   r_MaquinaEstats <= TRANSFER;                          //Pasem al estat de transfer perque ja estem preparats per enviar
                end 
@@ -88,13 +88,13 @@ begin
                     begin
                         if(i_TX_DV)                                     //I el trigger esta activat
                         begin
-                        r_TX_count <= r_TX_count - 3'b001;                   //Descontem un a la conta per passar a la seguent posicio
+                        r_TX_count <= r_TX_count - 3'b001;              //Descontem un a la conta per passar a la seguent posicio
                         end
                     end
                     else
                     begin
                         r_CS_n <= 1'b1;                                 //Un cop TX count sigui 0, tornem a activar el CS
-                        r_CS_Inactive_Count <= 2'b01;        //Donem el valor maxim al temps que hem d'estar inactius
+                        r_CS_Inactive_Count <= 2'b11;                   //Donem el valor maxim al temps que hem d'estar inactius
                         r_MaquinaEstats <= CS_INACTIVE;                 //Pasem al estat d'inactivitat
                     end
                 end 
@@ -120,7 +120,7 @@ begin
     end 
 end
 
-//Proposit: Mantindre controla RX count per poder indexar be les entrades 
+//Proposit: Mantindre controlat RX count per poder indexar be les entrades 
 
 always @(posedge i_clk)
 begin

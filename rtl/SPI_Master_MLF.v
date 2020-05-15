@@ -1,9 +1,9 @@
-//model original: https://github.com/nandland/spi-master/tree/master/Verilog
+// Model original: https://github.com/nandland/spi-master/tree/master/Verilog/source/SPI_Master.v
 // el model que es presenta a continuació és una modificació del model original amb els requeriments establerts pels professors
 
 module SPI_Master_MLF
-    #(parameter SPI_MODE = 3,                                           //Determina quin model SPI utilitzem CPOL,CPHA: 0=00, 1=01, 2=10, 3=11
-      parameter CLKS_PER_HALF_BIT = 4)                                  //Donada la freq de l'entrada (i_clk) determinem quants pulsos hi ha en mig bit (SPI_clk = 25MHz, i_clk= 100MHz; 100MHz/25MHz = 4 polsos / 2 = 2)
+    #(parameter SPI_MODE = 0,                                           //Determina quin model SPI utilitzem CPOL,CPHA: 0=00, 1=01, 2=10, 3=11
+      parameter CLKS_PER_HALF_BIT = 2)                                  //Donada la freq de l'entrada (i_clk) determinem quants pulsos hi ha en mig bit (SPI_clk = 25MHz, i_clk= 100MHz; 100MHz/25MHz = 4 polsos / 2 = 2)
     (
         //Senyals de control
         input                   i_rst_n,                                //senyal de reset negada
@@ -27,7 +27,7 @@ module SPI_Master_MLF
     wire    w_CPOL;                                                     //Polaritat del clk
     wire    w_CPHA;                                                     //Fase del clk
 
-    reg [4:0] r_SPI_clk_count;              //Conta per calcular el clock spi
+    reg [4:0] r_SPI_clk_count;                                          //Conta per calcular el clock spi
     reg r_SPI_clk;                                                      //Registre on guardem el valor del clock spi
     reg [4:0] r_SPI_Clk_Edges;                                          //Numero de flancs en un byte (sempre 16, 1byte = 8bits; 1bit = 2 edges; 8bits = 16 edges)
     reg r_Leading_Edge;                                                 //registre on es guarda el flanc de pujada
